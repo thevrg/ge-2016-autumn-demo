@@ -31,7 +31,7 @@ public class SwingView implements MyView, MessageChangedListener {
     private JButton saveButton = new JButton("Save");
 
     public void setVisible() {
-        messageField.setMinimumSize(new Dimension(300,20));
+        messageField.setPreferredSize(new Dimension(300,20));
         frame.getContentPane().add(panel, BorderLayout.CENTER);
         panel.add(messageField);
         panel.add(saveButton);
