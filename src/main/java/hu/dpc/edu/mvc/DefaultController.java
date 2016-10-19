@@ -11,6 +11,9 @@ public class DefaultController implements MyController {
     private MyModel model;
 
     public DefaultController(MyModel model) {
+        if (model == null) {
+            throw new IllegalArgumentException("Model is required");
+        }
         this.model = model;
     }
 
