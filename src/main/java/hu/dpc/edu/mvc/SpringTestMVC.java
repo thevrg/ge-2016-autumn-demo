@@ -13,18 +13,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringTestMVC {
     public static void main(String[] args) {
-        //final ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        final ApplicationContext context = new ClassPathXmlApplicationContext("/application-config.xml");
-        final MyModel model = context.getBean(MyModel.class);
+        final ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        //final ApplicationContext context = new ClassPathXmlApplicationContext("/application-config.xml");
 
-        final SwingView view = context.getBean("view", SwingView.class);
+        final SwingView view1 = context.getBean("view", SwingView.class);
+        final SwingView view2 = context.getBean("view", SwingView.class);
 
 
-        System.out.println(model.getClass());
-        System.out.println(view.getClass());
-
-        model.addMessageChangeListener(view);
-
-        view.setVisible();
+        view1.setVisible();
+        view2.setVisible();
     }
 }

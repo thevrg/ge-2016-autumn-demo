@@ -5,7 +5,10 @@ import hu.dpc.edu.mvc.model.MessageChangedEvent;
 import hu.dpc.edu.mvc.model.MessageChangedListener;
 import hu.dpc.edu.mvc.model.MyModel;
 import hu.dpc.edu.mvc.view.MyView;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.PostConstruct;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -32,17 +35,21 @@ public class SwingView implements MyView, MessageChangedListener {
 
     public void setVisible() {
         messageField.setPreferredSize(new Dimension(300,20));
-        frame.getContentPane().add(panel, BorderLayout.CENTER);
-        panel.add(messageField);
-        panel.add(saveButton);
-        saveButton.addActionListener(new ActionListener() {
+        final ActionListener saveListener = new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 controller.onSave(messageField.getText());
             }
-        });
+        };
+        frame.getContentPane().add(panel, BorderLayout.CENTER);
+        panel.add(messageField);
+        panel.add(saveButton);
 
         final String message = model.getMessage();
         messageField.setText(message);
+
+        messageField.addActionListener(saveListener);
+        saveButton.addActionListener(saveListener);
 
         frame.pack();
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -60,5 +67,10 @@ public class SwingView implements MyView, MessageChangedListener {
             }
         });
 
+    }
+
+    @PostConstruct
+    public void initView() {
+        model.addMessageChangeListener(this);
     }
 }

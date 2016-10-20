@@ -11,6 +11,7 @@ import java.util.TimerTask;
  */
 public class TestMVC {
     public static void main(String[] args) {
+
         final MyModel model = new InMemoryModel();
         final DefaultController controller = new DefaultController(model);
         final SwingView view = new SwingView(model, controller);

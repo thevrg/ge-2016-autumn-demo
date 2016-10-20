@@ -36,4 +36,13 @@ public class Person {
     public boolean isActive() {
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", azonosito=" + azonosito +
+                '}';
+    }
 }
