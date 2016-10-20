@@ -9,11 +9,11 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="model" class="hu.dpc.edu.InMemoryModel"/>
+    <bean id="model" class="hu.dpc.edu.mvc.impl.InMemoryModel"/>
 
-    <bean id="controller" class="hu.dpc.edu.mvc.DefaultController" property:myModel-ref="model" />
+    <bean id="controller" class="hu.dpc.edu.mvc.impl.DefaultController" property:myModel-ref="model" />
 
-    <bean id="view" class="hu.dpc.edu.SwingView" c:model-ref="model" c:controller-ref="controller"/>
+    <bean id="view" class="hu.dpc.edu.mvc.impl.SwingView" c:model-ref="model" c:controller-ref="controller"/>
 
     <bean id="person" class="hu.dpc.edu.mvc.MyPersonFactory" c:firstName="Tibor" c:lastName="Nagy"/>
 

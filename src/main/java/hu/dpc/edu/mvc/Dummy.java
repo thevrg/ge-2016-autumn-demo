@@ -10,8 +10,8 @@ import java.lang.annotation.Target;
 /**
  * Created by vrg on 20/10/16.
  */
-@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
+@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Qualifier
-public @interface InMemory {
+public @interface Dummy {
 }

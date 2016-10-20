@@ -1,6 +1,8 @@
 package hu.dpc.edu;
 
-import hu.dpc.edu.mvc.DefaultController;
+import hu.dpc.edu.mvc.impl.DefaultController;
+import hu.dpc.edu.mvc.impl.InMemoryModel;
+import hu.dpc.edu.mvc.impl.SwingView;
 import hu.dpc.edu.mvc.model.MyModel;
 
 import java.util.Timer;

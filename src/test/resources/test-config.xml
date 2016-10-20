@@ -7,9 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="model" class="hu.dpc.edu.InMemoryModel"/>
+    <bean id="model" class="hu.dpc.edu.mvc.impl.InMemoryModel"/>
 
-    <bean id="controller" class="hu.dpc.edu.mvc.DefaultController">
+    <bean id="controller" class="hu.dpc.edu.mvc.impl.DefaultController">
         <constructor-arg index="0" ref="model"/>
     </bean>
 

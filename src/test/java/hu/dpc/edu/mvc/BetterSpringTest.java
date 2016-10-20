@@ -1,14 +1,13 @@
 package hu.dpc.edu.mvc;
 
-import hu.dpc.edu.InMemoryModel;
-import hu.dpc.edu.SwingView;
+import hu.dpc.edu.mvc.impl.InMemoryModel;
 import hu.dpc.edu.mvc.controller.MyController;
+import hu.dpc.edu.mvc.impl.DefaultController;
 import hu.dpc.edu.mvc.model.MyModel;
 import hu.dpc.edu.mvc.view.MyView;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 

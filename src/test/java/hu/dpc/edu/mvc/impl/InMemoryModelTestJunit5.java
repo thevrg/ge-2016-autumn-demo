@@ -1,5 +1,6 @@
-package hu.dpc.edu;
+package hu.dpc.edu.mvc.impl;
 
+import hu.dpc.edu.mvc.impl.InMemoryModel;
 import hu.dpc.edu.mvc.model.MessageChangedEvent;
 import hu.dpc.edu.mvc.model.MessageChangedListener;
 import org.junit.jupiter.api.DisplayName;

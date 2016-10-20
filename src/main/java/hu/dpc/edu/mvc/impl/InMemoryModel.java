@@ -1,5 +1,6 @@
-package hu.dpc.edu;
+package hu.dpc.edu.mvc.impl;
 
+import hu.dpc.edu.mvc.InMemory;
 import hu.dpc.edu.mvc.model.MessageChangedEvent;
 import hu.dpc.edu.mvc.model.MessageChangedListener;
 import hu.dpc.edu.mvc.model.MyModel;
@@ -19,6 +20,8 @@ import java.util.List;
 /**
  * Created by vrg on 17/10/16.
  */
+@InMemory
+@Component
 public class InMemoryModel implements MyModel, BeanNameAware, ApplicationContextAware {
 
     public InMemoryModel() {

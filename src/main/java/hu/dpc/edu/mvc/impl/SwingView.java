@@ -1,16 +1,16 @@
-package hu.dpc.edu;
+package hu.dpc.edu.mvc.impl;
 
+import hu.dpc.edu.mvc.Default;
+import hu.dpc.edu.mvc.InMemory;
 import hu.dpc.edu.mvc.controller.MyController;
 import hu.dpc.edu.mvc.model.MessageChangedEvent;
 import hu.dpc.edu.mvc.model.MessageChangedListener;
 import hu.dpc.edu.mvc.model.MyModel;
 import hu.dpc.edu.mvc.view.MyView;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,12 +18,14 @@ import java.awt.event.ActionListener;
 /**
  * Created by vrg on 17/10/16.
  */
+@org.springframework.stereotype.Component
 public class SwingView implements MyView, MessageChangedListener {
 
     private MyModel model;
     private MyController controller;
 
-    public SwingView(MyModel model, MyController controller) {
+    @Autowired
+    public SwingView(@InMemory MyModel model, @Default MyController controller) {
         this.model = model;
         this.controller = controller;
     }

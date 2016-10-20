@@ -1,5 +1,6 @@
-package hu.dpc.edu.mvc;
+package hu.dpc.edu.mvc.impl;
 
+import hu.dpc.edu.mvc.impl.DefaultController;
 import hu.dpc.edu.mvc.model.MyModel;
 import org.junit.Test;
 

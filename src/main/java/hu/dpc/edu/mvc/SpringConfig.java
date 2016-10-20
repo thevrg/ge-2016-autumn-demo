@@ -1,17 +1,16 @@
 package hu.dpc.edu.mvc;
 
-import hu.dpc.edu.InMemoryModel;
-import hu.dpc.edu.SwingView;
+import hu.dpc.edu.mvc.impl.InMemoryModel;
+import hu.dpc.edu.mvc.impl.SwingView;
 import hu.dpc.edu.mvc.controller.MyController;
+import hu.dpc.edu.mvc.impl.DefaultController;
 import hu.dpc.edu.mvc.model.MyModel;
 import hu.dpc.edu.mvc.view.MyView;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Scope;
 
 import java.util.Calendar;
-import java.util.concurrent.Callable;
 
 /**
  * Created by vrg on 17/10/16.
