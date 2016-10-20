@@ -10,6 +10,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 /**
  * Created by vrg on 17/10/16.
  */
-@Component
+@Service
 @Dummy
 public class DummyModel implements MyModel {
 

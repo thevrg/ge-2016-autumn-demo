@@ -9,11 +9,12 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 /**
  * Created by vrg on 17/10/16.
  */
-@Component
+@Controller
 @Default
 public class DefaultController implements MyController {
 

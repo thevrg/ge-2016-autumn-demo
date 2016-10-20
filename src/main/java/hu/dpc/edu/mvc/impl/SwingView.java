@@ -2,6 +2,7 @@ package hu.dpc.edu.mvc.impl;
 
 import hu.dpc.edu.mvc.Default;
 import hu.dpc.edu.mvc.InMemory;
+import hu.dpc.edu.mvc.View;
 import hu.dpc.edu.mvc.controller.MyController;
 import hu.dpc.edu.mvc.model.MessageChangedEvent;
 import hu.dpc.edu.mvc.model.MessageChangedListener;
@@ -14,11 +15,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Created by vrg on 17/10/16.
  */
-@org.springframework.stereotype.Component
+@View
 public class SwingView implements MyView, MessageChangedListener {
 
     private MyModel model;
@@ -58,6 +61,13 @@ public class SwingView implements MyView, MessageChangedListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.onCreateView();
+            }
+        });
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                model.removeMessageChangeListener(SwingView.this);
             }
         });
 
