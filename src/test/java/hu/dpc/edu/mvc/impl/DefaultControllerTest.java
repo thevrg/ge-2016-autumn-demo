@@ -18,7 +18,7 @@ public class DefaultControllerTest {
     public void constructorShouldThrowAnIllegalArgumentExceptionIfModelIsNull() {
         //When
         try {
-            new DefaultController(null);
+            new DefaultController(null, null);
             fail("IllegalArgumentException is expected");
         } catch (IllegalArgumentException ex) {
             //Then
@@ -31,7 +31,7 @@ public class DefaultControllerTest {
         //Given
         final MyModel mockedModel = mock(MyModel.class);
 
-        final DefaultController controller = new DefaultController(mockedModel);
+        final DefaultController controller = new DefaultController(mockedModel, null);
 
         final String messageToSave = "Test Message";
 

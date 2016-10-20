@@ -29,6 +29,11 @@ public class AutowiredSpringConfig {
             public void onSave(String message) {
                 System.out.println("Dummy save....");
             }
+
+            @Override
+            public MyView onCreateView() {
+                return null;
+            }
         };
     }
 

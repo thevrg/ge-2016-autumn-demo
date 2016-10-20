@@ -4,7 +4,10 @@ import hu.dpc.edu.mvc.Default;
 import hu.dpc.edu.mvc.InMemory;
 import hu.dpc.edu.mvc.controller.MyController;
 import hu.dpc.edu.mvc.model.MyModel;
+import hu.dpc.edu.mvc.view.MyView;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,14 +19,17 @@ public class DefaultController implements MyController {
 
     private MyModel model;
 
+    private ViewFactory viewFactory;
+
     public DefaultController() {
     }
 
     @Autowired
-    public DefaultController(@InMemory MyModel model) {
+    public DefaultController(@InMemory MyModel model, ViewFactory viewFactory) {
         if (model == null) {
             throw new IllegalArgumentException("Model is required");
         }
+        this.viewFactory = viewFactory;
         this.model = model;
     }
 
@@ -33,5 +39,12 @@ public class DefaultController implements MyController {
 
     public void onSave(String message) {
         model.setMessage(message);
+    }
+
+    @Override
+    public MyView onCreateView() {
+        MyView view = viewFactory.createView();
+        view.setVisible();
+        return view;
     }
 }

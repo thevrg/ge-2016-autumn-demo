@@ -23,4 +23,9 @@ public class TestView implements MyView, MessageChangedListener{
     public void handleMessageChangedEvent(MessageChangedEvent event) {
         System.out.println("Fake implementation...");
     }
+
+    @Override
+    public void setVisible() {
+        System.out.println("Fake setVisible impl...");
+    }
 }
